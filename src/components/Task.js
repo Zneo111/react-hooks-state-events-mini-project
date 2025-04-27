@@ -1,18 +1,16 @@
 import React from "react";
 
 function Task({ text, category, onDelete }) {
+  // This function handles the click event for deleting the task
   function handleClick() {
-    onDelete(text); // Send the task text back to App.js for deletion
+    onDelete(text); // Pass the task text to App.js for deletion
   }
 
   return (
     <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
-      <div className="label">{category}</div>
-      <div className="text">{text}</div>
-      <button className="delete" onClick={handleClick}>X</button>
+      <div className="label">{category}</div> {/* Display the category */}
+      <div className="text">{text}</div> {/* Display the task text */}
+      <button className="delete" onClick={handleClick}>X</button> {/* Delete button */}
     </div>
   );
 }
